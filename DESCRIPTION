@@ -1,0 +1,24 @@
+Package: TeacupCerberus
+Type: Package
+Title: Fits the Bayesian Teacup Cerberus Model
+Author: Justin Silverman
+Version: 0.1
+Maintainer: Justin Silverman <Justin.Silverman@duke.edu>
+Description: Estimates covariation within and between two count datasets where the counts
+  contain multinomial variation (e.g., sequence count data like microbiome 16S or bulk/single-cell RNA-seq).
+  The model outputs Bayesian posterior samples over covariance matricies. 
+  The entire posterior reflects uncertainty in the true covariation due to multinomial counting. 
+License: GPL-2 | GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+Imports: 
+    dplyr,
+    magrittr
+Remote: 
+  jsilve24/RcppCoDA
+  jsilve24/Driver
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
