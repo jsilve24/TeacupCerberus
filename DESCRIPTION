@@ -1,6 +1,6 @@
 Package: TeacupCerberus
 Type: Package
-Title: Fits the Bayesian Teacup Cerberus Model
+Title: Bayesian Estimation of Covariation Between and Within Two Multivariate Count Datasets
 Author: Justin Silverman
 Version: 0.1
 Maintainer: Justin Silverman <Justin.Silverman@duke.edu>
