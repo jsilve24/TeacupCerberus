@@ -22,3 +22,5 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+URL: https://github.com/jsilve24/TeacupCerberus
+BugReports: https://github.com/jsilve24/TeacupCerberus/issues
