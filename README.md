@@ -1,7 +1,8 @@
 # TeacupCerberus
-Bayesian Estimation of Covariation Between and Within Two Multivariate Count Datasets
+Bayesian Estimation of Covariation Between and Within Two Multivariate Count Datasets <br>
+*its a small version of a mythical two headed dog*
 
-Please See Vignette for More Details
+Please See [Vignette](https://jsilve24.github.io/TeacupCerberus/articles/TeacupCerberus.html) for More Details. 
 
 ## Installation ##
 

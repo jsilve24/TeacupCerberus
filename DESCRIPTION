@@ -1,7 +1,7 @@
 Package: TeacupCerberus
 Type: Package
 Title: Bayesian Estimation of Covariation Between and Within Two Multivariate Count Datasets
-Author: Justin Silverman
+Authors: Justin D. Silverman <Justin.Silverman@duke.edu>
 Version: 0.1
 Maintainer: Justin Silverman <Justin.Silverman@duke.edu>
 Description: Estimates covariation within and between two count datasets where the counts
@@ -22,5 +22,5 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
-URL: https://github.com/jsilve24/TeacupCerberus
+URL: https://github.com/jsilve24/TeacupCerberus, https://jsilve24.github.io/TeacupCerberus/index.html
 BugReports: https://github.com/jsilve24/TeacupCerberus/issues
