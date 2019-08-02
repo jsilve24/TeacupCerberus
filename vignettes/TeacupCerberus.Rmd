@@ -17,8 +17,8 @@ knitr::opts_chunk$set(
 
 
 ```{r setup}
-#library(TeacupCerberus)
-devtools::load_all()
+library(TeacupCerberus)
+
 set.seed(858302)
 ```
 
@@ -123,9 +123,9 @@ There are a number of different helpful representations that users may want to l
 
 ## Extracting Correlations from Sigma
 If you want to view the posterior over correlations rather than covariances just
-use the function `sigma2cor`. 
+use the function `tc2cor`. 
 ```{r}
-Sigma.cor <- sigma2cor(Sigma)
+Sigma.cor <- tc2cor(Sigma)
 ```
 
 ## Calculate Proportionality rather than Covariance
@@ -135,9 +135,9 @@ taxa/genes represented by those CLR coordinates are infact correlated. This is n
 when using normal correlation however. A good review of proportionality can be found in @lovell2015. 
 @lovell2015 proposed $\phi$ statistics as a measure of proportionality. The lower the 
 value of $\phi$ the more proportional two things are. $\phi$ statistics can be calculated
-directly from `Sigma` using the function `RcppCoDA::clrvar2phi` as below
+directly from `Sigma` using the function `tcvar2phi` as below
 ```{r}
-Sigma.phi <- RcppCoDA::clrvar2phi(Sigma)
+Sigma.phi <- tc2phi(Sigma)
 ```
 
 ## Represent Sigma in IQLR rather than CLR
@@ -145,9 +145,9 @@ The IQLR transform [@wu2017] is a nice alternative for the CLR that deal with co
 It's a bit of a complicated transform, and I am not going to go into details here. 
 What I will say is that when working with Microbiome data, the IQLR mahy be helpful
 when you want to pretend like your acctually measuring correlation between taxa rather than
-between "log-ratios". 
+between "log-ratios". This function just needs you to tell it the dimensions D1 and D2. 
 ```{r}
-Sigma.iqlr <- RcppCoDA::clrvar2iqlrvar(Sigma)
+Sigma.iqlr <- tc2iqlrvar(Sigma, D1, D2)
 ```
 
 # Ranking "hits"

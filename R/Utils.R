@@ -32,7 +32,8 @@ rDirichlet <- function(alpha, n_samples=2000){
 #'
 #' @param Sigma Array of Covariance matricies from output of teacup_cerberus
 #' @return Array of Correlation matricies of same dimensions
-sigma2cor <- function(Sigma){
+#' @export
+tc2cor <- function(Sigma){
   if (length(dim(Sigma)) != 3) stop("Sigma must be an array of dimension 3")
   for (i in 1:dim(Sigma)[3]){
     Sigma[,,i] <- cov2cor(Sigma[,,i])
@@ -72,4 +73,38 @@ filter_sigma_ecdf <- function(Sigma, lambda=0.95, use_names=TRUE){
     filter((ECDF0 >= lambda) | (ECDF0 <= 1-lambda)) %>%
     filter(Coord1 != Coord2) %>%
     arrange(-abs(ECDF0-0.5))
+}
+
+
+#' Transform output of TeacupCerberus to iqlr
+#' @param Sigma output of TeacupCerberus (in CLR basis)
+#' @param D1 (integer) dimension of the first dataset
+#' @param D2 (integer) dimension of the second dataset
+#' @param qLow1 lower quantile defining iqlr for first dataset
+#' @param qHigh1 upper quantile defining iqlr for first dataset
+#' @param qLow2 lower quantile defining iqlr for second dataset
+#' @param qHigh2 upper quantile defining iqlr for second
+#' @return array of same dimensions as Sigma
+#' @export
+tc2iqlrvar <- function(Sigma, D1, D2,
+                        qLow1=0.25, qHigh1 = 0.75,
+                        qLow2=0.25, qHigh2 = 0.75){
+  b <- 1:2
+  Sigma <- RcppCoDA::vec_to_array(Sigma)
+  s <- dim(Sigma)
+  Sigma <- RcppCoDA:::array_pre(Sigma, b)
+  Sigma <- tc2iqlrvar_internal(Sigma, as.integer(D1), as.integer(D2),
+                                qLow1, qHigh1, qLow2, qHigh2)
+  Sigma <- RcppCoDA:::array_post(Sigma, b, s)
+  return(Sigma)
+}
+
+#' Transform output of Teacup Cerberus to phi Statistics
+#'
+#' @param Sigma output of teacup_cerberus in (clr coordinates)
+#' @return array of the same dimensions as Sigma
+#' @details this is just a wrapper around RcppCoDA::clrvar2phi
+#' @export
+tc2phi <- function(Sigma){
+  return(RcppCoDA::clrvar2phi(Sigma))
 }
