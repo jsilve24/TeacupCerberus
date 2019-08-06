@@ -40,5 +40,5 @@ and then transforming posterior samples of that model via
 \deqn{\eta_1 = CLR^{-1}(\eta_1)}
 \deqn{\eta_2 = CLR^{-1}(\eta_2)}
 and then the s-th sample of Sigma (as a correlation matrix is given by)
-\deqn{\Sigma^s = corr(cbind(\eta_1^s, \eta_2^s))}
+\deqn{\Sigma^s = cov(cbind(\eta_1^s, \eta_2^s))}
 }

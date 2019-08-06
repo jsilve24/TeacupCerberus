@@ -22,7 +22,7 @@
 #' \deqn{\eta_1 = CLR^{-1}(\eta_1)}
 #' \deqn{\eta_2 = CLR^{-1}(\eta_2)}
 #' and then the s-th sample of Sigma (as a correlation matrix is given by)
-#' \deqn{\Sigma^s = corr(cbind(\eta_1^s, \eta_2^s))}
+#' \deqn{\Sigma^s = cov(cbind(\eta_1^s, \eta_2^s))}
 #' @return Array Sigma of dimension (D1+D2) x (D1+D2) x n_samples
 #'   (Sample of Covariance Matricies)
 #' @import RcppCoDA
