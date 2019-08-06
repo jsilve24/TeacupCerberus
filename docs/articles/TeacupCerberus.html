@@ -104,7 +104,7 @@ Y_i^{(2)} &amp;\sim \text{Multinomial}(\pi^{(2)}_i) \\
 \begin{align}
 \eta^{(1)s}_i &amp;= \text{CLR}(\pi^{(1)s}_i) \\
 \eta^{(2)s}_i &amp;= \text{CLR}(\pi^{(2)s}_i) \\
-\Sigma_s &amp;= \text{corr}\left(\begin{bmatrix} \eta^{(1)s} \\ \eta^{(2)s} \end{bmatrix}\right)
+\Sigma_s &amp;= \text{cov}\left(\begin{bmatrix} \eta^{(1)s} \\ \eta^{(2)s} \end{bmatrix}\right)
 \end{align}
 \]</span> We then have posterior samples of the correlation matrix, each sample <span class="math inline">\(\Sigma^s\)</span> has the following form: <span class="math display">\[
 \Sigma_s = \begin{bmatrix} \Sigma_s^{(1,1)} &amp; \Sigma_s^{(1,2)} \\

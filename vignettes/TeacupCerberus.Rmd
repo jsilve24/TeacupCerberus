@@ -60,7 +60,7 @@ $$
 \begin{align}
 \eta^{(1)s}_i &= \text{CLR}(\pi^{(1)s}_i) \\
 \eta^{(2)s}_i &= \text{CLR}(\pi^{(2)s}_i) \\
-\Sigma_s &= \text{corr}\left(\begin{bmatrix} \eta^{(1)s} \\ \eta^{(2)s} \end{bmatrix}\right)
+\Sigma_s &= \text{cov}\left(\begin{bmatrix} \eta^{(1)s} \\ \eta^{(2)s} \end{bmatrix}\right)
 \end{align}
 $$
 We then have posterior samples of the correlation matrix, each sample $\Sigma^s$
